@@ -1,0 +1,69 @@
+---
+# API Service (LoadBalancer for external traffic)
+apiVersion: v1
+kind: Service
+metadata:
+  name: fte-api-service
+  namespace: customer-success-fte
+  labels:
+    app: fte-api
+spec:
+  type: LoadBalancer
+  selector:
+    app: fte-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000
+      protocol: TCP
+    - name: https
+      port: 443
+      targetPort: 8000
+      protocol: TCP
+
+---
+# Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: fte-frontend-service
+  namespace: customer-success-fte
+  labels:
+    app: fte-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: fte-frontend
+  ports:
+    - port: 3000
+      targetPort: 3000
+
+---
+# PostgreSQL Service (internal only)
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+  namespace: customer-success-fte
+spec:
+  type: ClusterIP
+  selector:
+    app: postgres
+  ports:
+    - port: 5432
+      targetPort: 5432
+
+---
+# Kafka Service (internal only)
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka-service
+  namespace: customer-success-fte
+spec:
+  type: ClusterIP
+  selector:
+    app: kafka
+  ports:
+    - port: 9092
+      targetPort: 9092

@@ -1,0 +1,47 @@
+# =================================================================
+# TechCorp FTE — Python Dependencies
+# Install: pip install -r requirements.txt
+# Python 3.11+
+# =================================================================
+
+# Web Framework
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+starlette==0.37.2
+
+# AI / Anthropic
+anthropic==0.28.0
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9
+
+# Kafka (optional — only in LIVE mode)
+aiokafka==0.11.0
+
+# Gmail API (optional — only in LIVE mode)
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.131.0
+
+# Twilio WhatsApp (optional — only in LIVE mode)
+twilio==9.2.2
+
+# Pydantic (data validation)
+pydantic==2.7.1
+pydantic-settings==2.3.0
+email-validator==2.1.1
+
+# Utilities
+python-dotenv==1.0.1
+httpx==0.27.0
+aiohttp==3.9.5
+
+# Logging
+structlog==24.2.0
+
+# Testing (dev only)
+pytest==8.2.0
+pytest-asyncio==0.23.7
+httpx==0.27.0

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fte-config
+  namespace: customer-success-fte
+  labels:
+    app: techcorp-fte
+data:
+  DRY_RUN: "false"
+  LOG_LEVEL: "INFO"
+  BANK_CURRENCY: "PKR"
+  MAX_ACTIONS_PER_HOUR: "10"
+  KAFKA_BOOTSTRAP_SERVERS: "kafka-service:9092"
+  KAFKA_GROUP_ID: "fte-consumer-group"
+  NEXT_PUBLIC_API_URL: "https://api.techcorp.pk"
+  NEXT_PUBLIC_APP_NAME: "TechCorp AI Support"
+  CORS_ORIGINS: "https://support.techcorp.pk,https://www.techcorp.pk"
+  GMAIL_SUPPORT_EMAIL: "support@techcorp.pk"
+  TWILIO_WHATSAPP_NUMBER: "whatsapp:+14155238886"
