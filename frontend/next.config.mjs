@@ -1,16 +1,13 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   images: {
     domains: ['localhost'],
   },
-  // In production (Vercel), API calls go to the Python serverless function.
-  // In local dev, they go to the FastAPI backend at port 8000.
   async rewrites() {
     const isProd = process.env.NODE_ENV === 'production';
-    if (isProd) return [];          // Vercel handles routing via vercel.json
+    if (isProd) return [];
     return [
       {
         source: '/:path*',
