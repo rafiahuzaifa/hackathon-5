@@ -173,7 +173,7 @@ export default function SupportForm() {
           </button>
         </div>
 
-        {result.mode === 'demo' && (
+        {result.mode === 'DEMO' && (
           <p className="text-xs text-center text-yellow-600 mt-4">
             🟡 Running in DEMO mode — AI is processing your request
           </p>

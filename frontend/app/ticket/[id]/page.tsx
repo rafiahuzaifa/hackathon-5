@@ -260,7 +260,7 @@ export default function TicketStatusPage() {
         </div>
 
         <p className="text-xs text-center text-gray-400 mt-3">
-          Auto-refreshes every 10 seconds · {ticket.mode === 'demo' ? '🟡 DEMO mode' : '🟢 LIVE mode'}
+          Auto-refreshes every 10 seconds · {ticket.mode === 'DEMO' ? '🟡 DEMO mode' : '🟢 LIVE mode'}
         </p>
       </main>
     </div>
